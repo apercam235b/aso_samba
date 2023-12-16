@@ -149,7 +149,15 @@ instalar_paquetes()
 	#Cambiar ip a ip estatica y añadir el nombre del equipo al fichero hosts
 cambiar_nombre(domain, nombre_equipo)
 	#modificar el fichero de /etc/resolv.conf
-cambiar_dns(dns)
+#cambiar_dns(dns)
+ruta_resolv_conf = "/etc/resolv.conf"
+linea_dns = "nameserver " + dns + "\n"
+print (linea_dns)
+with open(ruta_resolv_conf, 'w') as archivo:
+	archivo.write(linea_dns)
+with open(ruta_resolv_conf, 'r') as resolv:
+	contenido = resolv.read()
+print (contenido)
 
 modificar_samba(domain, nombre_equipo)
 
