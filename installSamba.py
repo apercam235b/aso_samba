@@ -52,8 +52,8 @@ def cambiar_nombre(nombre_dominio, nombre_host):
 	#reiniciar_networking()
 	#Cambiamos el nombre del equipo con hostnamectl
 
-	#comando = ["sudo", "hostnamectl", "set-hostname", nombre_equipo]
-	#subprocess.run(comando, check=True)
+	comando = ["sudo", "hostnamectl", "set-hostname", nombre_equipo]
+	subprocess.run(comando, check=True)
 
 	#Vamos a modificar el fichero de hosts añadiendo la ip y el nombre de hosts
 
