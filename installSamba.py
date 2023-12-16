@@ -70,8 +70,8 @@ def cambiar_dns(nuevo_dns):
 	ruta_resolv_conf = "/etc/resolv.conf"
 	linea_dns = "nameserver " + nuevo_dns + "\n"
 	print (linea_dns)
-	file = open(ruta_resolv_conf, "w")
-	file.write(linea_dns)
+	with open(ruta_resolv_conf, 'w') as archivo:
+		archivo.write(linea_dns)
 
 def modificar_samba(dominio, host):
 	dominio_mayus = dominio.upper()
@@ -146,8 +146,8 @@ instalar_paquetes()
 	#Cambiar ip a ip estatica y añadir el nombre del equipo al fichero hosts
 cambiar_nombre(domain, nombre_equipo)
 	#modificar el fichero de /etc/resolv.conf
-cambiar_dns(dns)
-
 modificar_samba(domain, nombre_equipo)
 
 modificar_kerberos(domain)
+
+cambiar_dns(dns)
