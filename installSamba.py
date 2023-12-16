@@ -49,7 +49,7 @@ def cambiar_nombre(nombre_dominio, nombre_host):
 			comando_reinicio = "sudo systemctl restart networking"
 			subprocess.run(comando_reinicio, shell=True, check=True)
 
-	reiniciar_networking()
+	#reiniciar_networking()
 	#Cambiamos el nombre del equipo con hostnamectl
 
 	#comando = ["sudo", "hostnamectl", "set-hostname", nombre_equipo]
