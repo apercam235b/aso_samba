@@ -32,7 +32,7 @@ def cambiar_nombre(nombre_dominio, nombre_host):
 	gateway = resultado_encontrar_gateway.stdout.strip()
 
 	comprobar = "cat /etc/network/interfaces | grep static | cut -d' ' -f4"
-	if comprobar == "static":
+	if not comprobar == "static":
 		ruta_archivo_interfaces = "/etc/network/interfaces"
 		with open(ruta_archivo_interfaces, 'r') as archivo:
 			lineas = archivo.readlines()
